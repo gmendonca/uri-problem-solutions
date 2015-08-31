@@ -4,12 +4,12 @@
 using namespace std;
 
 int main(){
-    int r;
-    float pi = 3.14159;
-    
+    double r;
+    double pi = 3.14159;
+
     while(cin >> r){
-    printf("A=%0.4f\n",r*r*pi);
+        printf("A=%0.4lf\n",r*r*pi);
     }
-    
+
     return 0;
 }

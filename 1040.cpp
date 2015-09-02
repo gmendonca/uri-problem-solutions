@@ -3,19 +3,19 @@
 
 
 int main(){
-    
+
     float a,b,c,d,e,media;
-    
+
     std::cin >> a >> b >> c >> d;
-    
+
     media = (a*2 + b*3 + c*4 + d*1)/(10.0);
     printf("Media: %.1f\n", media);
-    
-    if(media > 7.0)
+
+    if(media >= 7.0)
             std::cout << "Aluno aprovado.\n";
     if(media < 5.0)
             std::cout << "Aluno reprovado.\n";
-    if(media > 5.0 && media < 6.9){
+    if(media >= 5.0 && media < 7.0){
             std::cout << "Aluno em exame.\n";
             std::cin >> e;
             printf("Nota do exame: %.1f\n", e);

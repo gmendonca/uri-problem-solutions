@@ -3,16 +3,16 @@
 using namespace std;
 
 int main(){
-    float N;
+    double N;
     int inteiro, aux, aux1;
-    
-    cin >> N;
-    
+
+    while(cin >> N){
+
     inteiro = N;
     N = 100*N;
-    aux1 = N; 
-    
-    
+    aux1 = N;
+
+
     cout << "NOTAS:\n";
     cout << inteiro/100 << " nota(s) de R$ 100.00\n";
     aux = (inteiro%100);
@@ -28,7 +28,7 @@ int main(){
     aux = (aux%2);
     cout << "MOEDAS:\n";
     cout << aux/1 << " moeda(s) de R$ 1.00\n";
-    
+
     aux1 = aux1%100;
     cout <<  aux1/50 << " moeda(s) de R$ 0.50\n";
     aux1 = aux1%50;
@@ -39,6 +39,7 @@ int main(){
     cout <<  aux1/5 << " moeda(s) de R$ 0.05\n";
     aux1 = aux1%5;
     cout <<  aux1/1 << " moeda(s) de R$ 0.01\n";
-    system("PAUSE");
+    }
+
     return 0;
 }

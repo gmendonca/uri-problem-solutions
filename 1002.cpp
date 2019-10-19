@@ -1,6 +1,5 @@
 #include <iostream>
-#include <stdio.h>
-
+#include <iomanip>
 using namespace std;
 
 int main(){
@@ -8,7 +7,7 @@ int main(){
     double pi = 3.14159;
 
     while(cin >> r){
-        printf("A=%0.4lf\n",r*r*pi);
+    cout << fixed << "A=" << setprecision(4) << r*r*pi << endl;
     }
 
     return 0;

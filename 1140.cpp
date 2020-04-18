@@ -1,38 +1,38 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+
+using namespace std;
+
+bool equals(int a, int b){
+
+	if (a==b or 32==abs(a-b))
+		return true;
+
+	return false;
+}
 
 int main(){
-    char comp;
-    char line[1200];
-    char * pch;
-    int flag;
-    while(gets(line)){
-           if(line[0] == '*') break;
-           flag = 0;
-           comp = 32;
-           pch = strtok (line," ");
-           while (pch != NULL)
-           {
-           if(comp == 32) comp = pch[0];
-           else{
-                if(pch[0] >= 65 && pch[0] <= 90){
-                        if(comp == pch[0] || comp == pch[0] + 32){
-                                flag = 0;
-                        }
-                        else flag = 1;
-                }else{
-                      if(comp == pch[0] || comp == pch[0] - 32){
-                                flag = 0;
-                      }
-                      else flag = 1;
-                }
-           }
-           if(flag == 1) break;
-           pch = strtok (NULL, " ");
-           }
-           if(flag == 1) printf("N\n");
-           else printf("Y\n");
-    }
-    
-    return 0;
+
+	string s;
+	getline(cin,s);
+	bool ans;
+
+	while (s!="*"){
+		ans=true;
+
+		for (int i=0;i<s.size();i++){
+			if (s[i]==' '){
+				if (!equals(s[i+1],s[0]))
+					ans=false;
+			}
+		}	
+
+		if (ans)
+			cout << "Y" << endl;
+		else
+			cout << "N" << endl;
+
+		getline(cin,s);
+	}
+
+	return 0;
 }
